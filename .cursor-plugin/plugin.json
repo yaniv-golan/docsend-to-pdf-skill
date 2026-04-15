@@ -1,0 +1,6 @@
+{
+  "name": "docsend-to-pdf",
+  "version": "0.1.0",
+  "description": "Convert DocSend links to PDF files",
+  "skills": "./docsend-to-pdf/skills"
+}

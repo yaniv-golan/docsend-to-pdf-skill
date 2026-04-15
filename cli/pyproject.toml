@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docsend-to-pdf"
+version = "0.1.0"
+description = "Convert DocSend links to PDF files"
+license = "MIT"
+requires-python = ">=3.9"
+readme = "README.md"
+authors = [
+    {name = "Yaniv Golan", email = "yaniv@golan.name"},
+]
+keywords = ["docsend", "pdf", "converter", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "requests>=2.28",
+    "Pillow>=9.0",
+    "click>=8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yaniv-golan/docsend-to-pdf-skill"
+Repository = "https://github.com/yaniv-golan/docsend-to-pdf-skill"
+Issues = "https://github.com/yaniv-golan/docsend-to-pdf-skill/issues"
+
+[project.scripts]
+docsend-to-pdf = "docsend_to_pdf.cli:main"

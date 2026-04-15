@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>DocSend - Document</title></head>
+<body>
+  <div id="prompt">
+    <div class="email-verification">
+      <p>We sent a verification code to <strong>user@example.com</strong></p>
+      <form action="/view/abc123/verify" method="post">
+        <input type="hidden" name="authenticity_token" value="csrf-token-verify" />
+        <input type="text" name="link_auth_form[verification_code]" placeholder="Enter code" />
+        <button type="submit">Verify</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

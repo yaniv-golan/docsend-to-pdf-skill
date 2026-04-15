@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>DocSend - Document</title></head>
+<body>
+  <div id="prompt">
+    <form action="/view/abc123" method="post">
+      <input type="hidden" name="authenticity_token" value="csrf-token-456" />
+      <input type="hidden" name="_method" value="patch" />
+      <input type="text" name="link_auth_form[email]" placeholder="Email address" />
+      <input type="password" name="link_auth_form[passcode]" placeholder="Passcode" />
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

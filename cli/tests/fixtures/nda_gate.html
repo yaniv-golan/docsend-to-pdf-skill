@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>DocSend - Document</title></head>
+<body>
+  <div id="prompt">
+    <div class="nda-agreement">
+      <div class="nda-agreement__content">
+        By viewing this document, you agree to keep its contents confidential.
+      </div>
+      <form action="/view/abc123/nda" method="post">
+        <input type="hidden" name="authenticity_token" value="csrf-token-789" />
+        <button type="submit" class="nda-agreement__accept">I agree</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

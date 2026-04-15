@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>DocSend - Document</title></head>
+<body>
+  <div id="prompt">
+    <div class="contact-card_description">Acme Corp</div>
+    <div class="contact-card_email">sender@acme.com</div>
+    <form action="/view/abc123" method="post">
+      <input type="hidden" name="authenticity_token" value="csrf-token-123" />
+      <input type="hidden" name="_method" value="patch" />
+      <input type="text" name="link_auth_form[email]" placeholder="Email address" />
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write  # Required for PyPI trusted publishing
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Update version strings
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          sed -i "s/version = \".*\"/version = \"$VERSION\"/" cli/pyproject.toml
+          sed -i "s/__version__ = \".*\"/__version__ = \"$VERSION\"/" cli/docsend_to_pdf/__init__.py
+          for f in .claude-plugin/plugin.json .cursor-plugin/plugin.json marketplace.json; do
+            sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" "$f"
+          done
+          for f in docsend-to-pdf/skills/docsend-to-pdf/SKILL.md .agents/skills/docsend-to-pdf/SKILL.md; do
+            sed -i "s/version: \".*\"/version: \"$VERSION\"/" "$f"
+          done
+
+      - name: Build CLI package
+        run: |
+          pip install build
+          cp README.md cli/README.md
+          python -m build cli/
+
+      - name: Create skill zip
+        run: |
+          mkdir -p dist
+          cd docsend-to-pdf/skills/docsend-to-pdf
+          zip -r ../../../dist/docsend-to-pdf-skill.zip .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            cli/dist/*.whl
+            cli/dist/*.tar.gz
+            dist/docsend-to-pdf-skill.zip
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: cli/dist/
+          skip-existing: true
