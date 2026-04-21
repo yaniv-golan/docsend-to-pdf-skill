@@ -1,0 +1,32 @@
+{
+  "name": "docsend-to-pdf-marketplace",
+  "owner": {
+    "name": "yaniv-golan",
+    "email": "yaniv@golan.name"
+  },
+  "metadata": {
+    "description": "Converts DocSend shared links into downloadable PDF files. Handles all access gates (email, passcode, NDA, email verification) by driving a headless browser.",
+    "version": "0.1.2",
+    "pluginRoot": "./docsend-to-pdf"
+  },
+  "plugins": [
+    {
+      "name": "docsend-to-pdf",
+      "source": "./docsend-to-pdf",
+      "description": "Converts DocSend shared links into downloadable PDF files. Handles all access gates (email, passcode, NDA, email verification) by driving a headless browser.",
+      "author": {
+        "name": "yaniv-golan",
+        "email": "yaniv@golan.name"
+      },
+      "category": "workflow-automation",
+      "tags": [
+        "docsend",
+        "pdf",
+        "deck",
+        "presentation",
+        "playwright",
+        "download"
+      ]
+    }
+  ]
+}

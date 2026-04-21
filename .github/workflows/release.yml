@@ -26,7 +26,7 @@ jobs:
           VERSION=${{ steps.version.outputs.VERSION }}
           sed -i "s/version = \".*\"/version = \"$VERSION\"/" cli/pyproject.toml
           sed -i "s/__version__ = \".*\"/__version__ = \"$VERSION\"/" cli/docsend_to_pdf/__init__.py
-          for f in .claude-plugin/plugin.json .cursor-plugin/plugin.json marketplace.json; do
+          for f in docsend-to-pdf/.claude-plugin/plugin.json .cursor-plugin/plugin.json .claude-plugin/marketplace.json; do
             sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" "$f"
           done
           for f in docsend-to-pdf/skills/docsend-to-pdf/SKILL.md .agents/skills/docsend-to-pdf/SKILL.md; do

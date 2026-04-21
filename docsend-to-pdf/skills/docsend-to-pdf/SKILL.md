@@ -9,7 +9,7 @@ description: >-
   drives a headless browser and handles the gates. Not for Papermark, Google
   Docs, Notion, Pitch.com, pptx, or existing PDFs.
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   author: "Yaniv Golan"
 ---
 

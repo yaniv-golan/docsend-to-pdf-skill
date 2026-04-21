@@ -1,0 +1,37 @@
+{
+  "skills": [
+    {
+      "name": "docsend-to-pdf",
+      "source_path": "/Users/yaniv/Documents/code/oss/docsend-to-pdf-skill/docsend-to-pdf/skills/docsend-to-pdf",
+      "description": "Download a DocSend document (docsend.com/view/... or docsend.dropbox.com/view/...) as a PDF. Use when the user pastes a DocSend link and wants it saved, downloaded, archived, exported, or converted to a PDF. Slides are per-request signed images behind email/passcode/NDA/email-verification gates — curl/wget/HTML scraping won't work, so this skill drives a headless browser and handles the gates. Not for Papermark, Google Docs, Notion, Pitch.com, pptx, or existing PDFs.",
+      "has_scripts": false,
+      "has_references": true,
+      "has_assets": false,
+      "has_agents": false,
+      "has_evals": false
+    }
+  ],
+  "plugin_name": "docsend-to-pdf",
+  "marketplace_name": "docsend-to-pdf-marketplace",
+  "display_name": "DocSend to PDF",
+  "description": "Converts DocSend shared links into downloadable PDF files. Handles all access gates (email, passcode, NDA, email verification) by driving a headless browser.",
+  "version": "0.1.2",
+  "author_name": "yaniv-golan",
+  "author_email": "yaniv@golan.name",
+  "github_owner": "yaniv-golan",
+  "github_repo": "docsend-to-pdf-skill",
+  "license": "MIT",
+  "keywords": [
+    "docsend",
+    "pdf",
+    "deck",
+    "presentation",
+    "playwright",
+    "download"
+  ],
+  "category": "workflow-automation",
+  "formats": [
+    "universal"
+  ],
+  "targets": []
+}
