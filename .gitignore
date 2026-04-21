@@ -6,3 +6,4 @@ build/
 .venv/
 *.pdf
 cli/README.md
+docsend-to-pdf-workspace/

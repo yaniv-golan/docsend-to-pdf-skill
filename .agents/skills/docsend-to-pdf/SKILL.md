@@ -1,17 +1,15 @@
 ---
 name: docsend-to-pdf
 description: >-
-  Converts DocSend shared links to downloadable PDF files. Use when the user
-  shares a docsend.com or docsend.dropbox.com URL, asks to "download this
-  deck", "save this DocSend as PDF", "convert this DocSend link", or wants
-  to extract a document from DocSend. Also triggers on bare DocSend URLs
-  pasted without explicit instructions. Handles all access gates including
-  email, passcode, NDA acceptance, and email verification — can optionally
-  check user's connected email for verification codes with permission.
-  Does NOT handle Papermark, Google Docs, Pitch.com, or other document
-  sharing platforms.
+  Download a DocSend document (docsend.com/view/... or
+  docsend.dropbox.com/view/...) as a PDF. Use when the user pastes a DocSend
+  link and wants it saved, downloaded, archived, exported, or converted to a
+  PDF. Slides are per-request signed images behind email/passcode/NDA/email-
+  verification gates — curl/wget/HTML scraping won't work, so this skill
+  drives a headless browser and handles the gates. Not for Papermark, Google
+  Docs, Notion, Pitch.com, pptx, or existing PDFs.
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DocSend to PDF

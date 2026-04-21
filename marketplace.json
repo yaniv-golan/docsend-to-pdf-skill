@@ -2,7 +2,7 @@
   "name": "docsend-to-pdf-marketplace",
   "display_name": "DocSend to PDF",
   "description": "Convert DocSend shared links to downloadable PDF files with full gate handling",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "plugins": [
     {
